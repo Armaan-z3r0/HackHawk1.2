@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+  </head>
+  <body>
+    <main>
+	{% if request.user.is_authenticated %}    
+	   <form method="post" action='/process_logout/'>
+		{% csrf_token %}
+		<p>Are you sure you want to logout</p>
+		<button type="submit">Log out</button>
+	        {% else %}
+		<p style="color : #f74646 ; font-size : 50px ; white-space : nowarp ; padding-right : -30px;">You are not logged in <a href="{% url 'login' %}">login</a>  </p>
+		{% endif %}
+	   </form>
+    </main>
+   </body>
+</html>

@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #010a40;
+            color: #ffffff;
+            overflow: hidden ;
+	    font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+	.image {
+		margin-left: -370px;
+	}
+        .content {
+            max-width: 50%;
+        }
+        .content h1 {
+	    --rgin-left: 200px;
+	    margin-right: -100px;
+	    margin-top: -100px;
+	    font-family: 'League Spartan';
+            font-size: 5em;
+	    font-weight: bolder;
+            color: #f74646;
+            margin-bottom: 1.5em;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+	    margin-right: -100px;
+        }
+        .form input[type="text"],
+        .form input[type="password"] {
+            margin-bottom: 1em;
+            padding: 15px;
+            font-size: 1em;
+            border: 2px solid #ffffff;
+            --border-radius: 5px;
+            background-color: whitesmoke;
+            color: red;
+	    font-weight: bold;
+	    
+        }
+        .form input[type="text"]::placeholder,
+        .form input[type="password"]::placeholder {
+            color: red ;
+
+        }
+        .form button {
+            padding: 15px;
+            font-size: 1em;
+            background-color: #ffffff;
+            color: #0b1120;
+            border: none;
+	    font-family: 'Montserrat';
+	    font-weight: bold ;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+	    margin-top: 20px;
+        }
+        .form button:hover {
+            background-color: #cccccc;
+        }
+	label {
+	   font-family: 'Montserrat';
+	   color: #47c3f7;
+	   font-weight: bold;
+	   padding-bottom: 10px;
+	}
+	form {
+	  display: flex;
+	  flex-direction: column;
+	}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+		<img src="{% static 'hawk.jpg' %}" alt="Registration Logo">
+        </div>
+        <div class="content">
+            <h1>Registration</h1>
+            <div class="form">
+		<form method="post" action='/register/'>
+		{% csrf_token %}	    
+		<label for="username">Username</label><br>
+                <input type="text" id="username"><br>
+		<label for="password">Password</label><br>
+                <input type="password" id="password"><br>
+		<label for="Re_enter_password">Re-enter Password</label><br>
+                <input type="password" id="Re_enter_password"><br>
+                <button type="submit">Register</button><br>
+		</form>	
+		{% if error %}
+			<p style='color:red;'>{{error}}</p>
+		{% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

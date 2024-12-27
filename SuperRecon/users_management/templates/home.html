@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackHawk</title>
+    <link href="https://db.onlinewebfonts.com/c/fa6db9175696f50a2566ed77580e4460?family=Extenda+30+Deca" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <style>
+	@font-face {
+ 	 font-family: "Liberty";
+	  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+	}
+	
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
+	
+body .text {
+  font-family: "Liberty";
+  font-weight: 100;
+  font-size: 7.8rem;
+  letter-spacing: -0.25em;
+  flex-flow: row;
+  margin-top: -1.7rem;
+}
+body .text .letter {
+  color: #d9fdff;
+  text-shadow: 0 0 2rem #00f0ff;
+  display: inline-block;
+}
+body .text .letter.letter-2 {
+  transform: translate(-0.2rem, 1rem) rotate(10deg);
+  -webkit-animation: flicker 2s ease-in-out infinite alternate;
+          animation: flicker 2s ease-in-out infinite alternate;
+}
+
+
+        body {
+	    overflow: hidden;
+            margin: 0;
+	    font-family: 'League Spartan';
+            background: linear-gradient(to right, #000000, #3533cd);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            --justify-content: space-between;
+            padding:  20px 50px;
+            background: none;
+        }
+
+        .navbar a {
+	    font-family: "Extenda 30 Deca";
+            text-decoration: none;
+            color: blue;
+            font-size: 5em;
+	    font-weight: lighter;
+	    margin-left: 25px;
+	    margin-top: -20px;
+	}
+	
+	a:hover {
+		color: red;
+	}
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+	}
+
+        .content {
+            text-align: left;
+	    margin-top: 190px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'login' %}">LOGIN</a>
+        <a href="{% url 'register' %}">REGISTER</a>
+    </div>
+    <div class="content">
+        <h1 class="text">
+		<span class="letter letter-1">S</span>
+		<span class="letter letter-2">I</span>
+		<span class="letter letter-3">M</span>
+		<span class="letter letter-4">P</span>
+		<span class="letter letter-5">L</span>
+		<span class="letter letter-6">F</span>
+		<span class="letter letter-7">Y</span>
+	</h1>
+	<h1 class="text">
+		<span class="letter letter-1">W</span>
+		<span class="letter letter-2">E</span>
+		<span class="letter letter-3">B</span>
+		<span class="letter letter-4">R</span>
+		<span class="letter letter-5">E</span>
+		<span class="letter letter-6">C</span>
+		<span class="letter letter-7">O</span>
+		<span class="letter letter-8">N</span>
+	</h1>
+	<h1 class="text">
+		<span class="letter letter-1">W</span>
+		<span class="letter letter-2">I</span>
+		<span class="letter letter-3">T</span>
+		<span class="letter letter-4">H</span>
+	</h1>
+	<h1 class="text">
+		<span class="letter letter-1">H</span>
+		<span class="letter letter-2">A</span>
+		<span class="letter letter-3">C</span>
+		<span class="letter letter-4">K</span>
+		<span class="letter letter-5">H</span>
+		<span class="letter letter-6">A</span>
+		<span class="letter letter-7">W</span>
+		<span class="letter letter-8">K</span>
+	</h1>
+    </div>
+  <img src='{% static "home.png" %}' alt="HackHawk Logo" class="logo">
+</body>
+</html>
+
